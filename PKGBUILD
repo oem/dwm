@@ -38,3 +38,6 @@ package() {
   install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
   install -m644 -D $srcdir/dwm.desktop $pkgdir/usr/share/xsessions/dwm.desktop
 }
+md5sums=('8bb00d4142259beb11e13473b81c0857'
+         '6c07c4d8c76bc2118e8ce203df524344'
+         '939f403a71b6e85261d09fc3412269ee')
