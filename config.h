@@ -2,6 +2,14 @@
 
 /* appearance */
 static const char font[]            = "-*-tamsyn-medium-*-*-*-16-*-*-*-*-*-*-*";
+#define NUMCOLORS 3
+static const char colors[NUMCOLORS][ColLast][8] = {
+	/* border     fg          bg */
+	{ "#262626", "#757978", "#1C1C1C" },        /* 01 = normal */
+	{ "#757978", "#C1C4BC", "#1C1C1C" },        /* 02 = selected */
+	{ "#A04363", "#A04363", "#1C1C1C" },        /* 03 = urgent/warning */
+};
+
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
