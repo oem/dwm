@@ -1,0 +1,2 @@
+default:
+	makepkg -efi
