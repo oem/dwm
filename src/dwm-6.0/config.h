@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-tamsyn-medium-*-*-*-16-*-*-*-*-*-*-*";
+static const char font[]            = "-*-tamsyn-medium-*-*-*-20-*-*-*-*-*-*-*";
 
 #define NUMCOLORS 3
 static const char colors[NUMCOLORS][ColLast][8] = {
 	/* border     fg          bg */
 	{ "#262626", "#757978", "#1C1C1C" },        /* 01 = normal */
-	{ "#757978", "#C1C4BC", "#1C1C1C" },        /* 02 = selected */
+	{ "#464646", "#C1C4BC", "#1C1C1C" },        /* 02 = selected */
 	{ "#A04363", "#A04363", "#1C1C1C" },        /* 03 = urgent/warning */
 };
 
@@ -17,12 +17,13 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "USR", "DEV", "SYS", "COM" };
+static const char *tags[] = { "SRC", "USR", "SYS", "COM" };
 
 static const Rule rules[] = {
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	/* class      instance        title       tags mask     isfloating   monitor */
+	{ "Gimp",       NULL,         NULL,       0,            True,        -1 },
+	{ "URxvt",     "URxvtFuzzy",  NULL,       0,            True,        -1 },
+	{ "Firefox",    NULL,         NULL,       1 << 8,       False,       -1 },
 };
 
 /* layout(s) */
@@ -49,15 +50,19 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", "tamzen:pixelsize=20", "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
+static const char *fuzzycmd[]  = { "fuzzy_win", "fzf_cmd", NULL };
+static const char *fuzzychromium[]  = { "fuzzy_win", "fzf_chromium", NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "100x25", NULL };
+static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "80x25", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	// { MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = fuzzychromium } },
+	{ MODKEY,                       XK_space,  spawn,          {.v = fuzzycmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -66,14 +71,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	// { MODKEY,                       XK_space,  setlayout,      {0} },
+	// { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
