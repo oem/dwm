@@ -23,6 +23,7 @@ static const Rule rules[] = {
 	/* class      instance        title       tags mask     isfloating   monitor */
 	{ "Gimp",       NULL,         NULL,       0,            True,        -1 },
 	{ "URxvt",     "URxvtFuzzy",  NULL,       0,            True,        -1 },
+	{ "URxvt",     "URxvtRecord", NULL,       0,            True,        -1 },
 	{ "Firefox",    NULL,         NULL,       1 << 8,       False,       -1 },
 };
 
@@ -52,7 +53,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "tamzen:pixelsize=20", "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *fuzzycmd[]  = { "fuzzy_win", "fzf_cmd", NULL };
-static const char *fuzzychromium[]  = { "fuzzy_win", "fzf_chromium", NULL };
+static const char *fuzzyrecord[]  = { "record_win", "record", NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "80x25", NULL };
@@ -60,7 +61,7 @@ static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geom
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	// { MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = fuzzychromium } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = fuzzyrecord } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = fuzzycmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd} },
