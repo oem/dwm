@@ -21,12 +21,13 @@ static const char *tags[] = { "SRC", "USR", "SYS", "COM" };
 
 static const Rule rules[] = {
 	/* class         instance       title       tags mask     isfloating   monitor */
-	{ "qutebrowser", NULL,          NULL,       1 << 1,       False,       -1 },
-	{ "URxvt",       "urxvt",       NULL,       1 << 0,       False,       -1 },
-	{ "Emacs",       NULL,          NULL,       1 << 0,       False,       -1 },
-	{ "URxvt",       "URxvtFuzzy",  NULL,       0,            True,        -1 },
-	{ "URxvt",       "URxvtRecord", NULL,       0,            True,        -1 },
-	{ "Firefox",      NULL,         NULL,       1 << 8,       False,       -1 },
+	{ "qutebrowser",   NULL,          NULL,       1 << 1,       False,       -1 },
+	{ "Brave-browser", NULL,          NULL,       1 << 2,       False,       -1 },
+	{ "URxvt",         "urxvt",       NULL,       1 << 0,       False,       -1 },
+	{ "Emacs",         NULL,          NULL,       1 << 0,       False,       -1 },
+	{ "URxvt",         "URxvtFuzzy",  NULL,       0,            True,        -1 },
+	{ "URxvt",         "URxvtRecord", NULL,       0,            True,        -1 },
+	{ "Firefox",       NULL,          NULL,       1 << 8,       False,       -1 },
 };
 
 /* layout(s) */
