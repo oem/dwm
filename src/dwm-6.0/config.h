@@ -24,6 +24,7 @@ static const Rule rules[] = {
 	{ "qutebrowser",             NULL, NULL, 1 << 1,       False,       -1 },
 	{ "firefoxdeveloperedition", NULL, NULL, 1 << 1,       False,       -1 },
 	{ "Brave-browser",           NULL, NULL, 1 << 2,       False,       -1 },
+	{ "Slack",                   NULL, NULL, 1 << 2,       False,       -1 },
 	{ "URxvt",                "urxvt", NULL, 1 << 0,       False,       -1 },
 	{ "Emacs",                   NULL, NULL, 1 << 0,       False,       -1 },
 	{ "URxvt",           "URxvtFuzzy", NULL, 0,            True,        -1 },
