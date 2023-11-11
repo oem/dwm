@@ -27,6 +27,7 @@ static const Rule rules[] = {
 	{ "Slack",                   NULL, NULL, 1 << 2,       False,       -1 },
 	{ "URxvt",                "urxvt", NULL, 1 << 0,       False,       -1 },
 	{ "kitty",                "kitty", NULL, 1 << 0,       False,       -1 },
+	{ "wezterm",            "wezterm", NULL, 1 << 0,       False,       -1 },
 	{ "Alacritty",        "Alacritty", NULL, 1 << 0,       False,       -1 },
 	{ "Emacs",                   NULL, NULL, 1 << 0,       False,       -1 },
 	{ "URxvt",           "URxvtFuzzy", NULL, 0,            True,        -1 },
@@ -61,9 +62,9 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", "tamzen:pixelsize=20", "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *fuzzycmd[]  = { "fuzzy_win", "fzf_cmd", NULL };
 static const char *alsamixer[]  = { "record_win", "alsamixer", NULL };
-static const char *termcmd[]  = { "urxvtc", NULL };
+static const char *termcmd[]  = { "wezterm", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "urxvtc", "-name", scratchpadname, "-geometry", "80x25", NULL };
+static const char *scratchpadcmd[] = { "urxvt", "-name", scratchpadname, "-geometry", "80x25", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
