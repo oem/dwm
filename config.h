@@ -6,9 +6,9 @@ static const char font[]            = "-*-tamsyn-medium-*-*-*-20-*-*-*-*-*-*-*";
 #define NUMCOLORS 3
 static const char colors[NUMCOLORS][ColLast][8] = {
 	/* border     fg          bg */
-	{ "#262626", "#757978", "#48298c" },        /* 01 = normal */
-	{ "#464646", "#C1C4BC", "#48298c" },        /* 02 = selected */
-	{ "#A04363", "#A04363", "#48298c" },        /* 03 = urgent/warning */
+	{ "#262626", "#757978", "#212121" },        /* 01 = normal */
+	{ "#464646", "#C1C4BC", "#212121" },        /* 02 = selected */
+	{ "#A04363", "#A04363", "#212121" },        /* 03 = urgent/warning */
 };
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
