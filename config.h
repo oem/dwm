@@ -6,8 +6,8 @@ static const char font[] = "-*-tamsyn-medium-*-*-*-20-*-*-*-*-*-*-*";
 #define NUMCOLORS 3
 static const char colors[NUMCOLORS][ColLast][8] = {
     /* border     fg          bg */
-    {"#262626", "#757978", "#282828"}, /* 01 = normal */
-    {"#464646", "#C1C4BC", "#282828"}, /* 02 = selected */
+    {"#262626", "#757978", "#000000"}, /* 01 = normal */
+    {"#464646", "#C1C4BC", "#000000"}, /* 02 = selected */
     {"#A04363", "#A04363", "#282828"}, /* 03 = urgent/warning */
 };
 
@@ -30,6 +30,7 @@ static const Rule rules[] = {
     {"URxvt", "urxvt", NULL, 1 << 0, False, -1},
     {"kitty", "kitty", NULL, 1 << 0, False, -1},
     {"wezterm", "wezterm", NULL, 1 << 0, False, -1},
+    {"ghostty", "ghostty", NULL, 1 << 0, False, -1},
     {"Alacritty", "Alacritty", NULL, 1 << 0, False, -1},
     {"Emacs", NULL, NULL, 1 << 0, False, -1},
     {"URxvt", "URxvtFuzzy", NULL, 0, True, -1},
@@ -71,7 +72,7 @@ static const char *dmenucmd[] = {
     colors[1][ColBG], "-sf", colors[1][ColFG],      NULL};
 static const char *fuzzycmd[] = {"fuzzy_win", "fzf_cmd", NULL};
 static const char *alsamixer[] = {"record_win", "alsamixer", NULL};
-static const char *termcmd[] = {"wezterm", NULL};
+static const char *termcmd[] = {"ghostty", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = {"urxvt",     "-name", scratchpadname,
                                       "-geometry", "80x25", NULL};

@@ -1,1 +1,1 @@
-/home/oem/src/oem/dwm/config.h
+../config.h
