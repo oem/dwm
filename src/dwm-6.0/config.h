@@ -71,7 +71,7 @@ static const char *dmenucmd[] = {
     colors[0][ColBG], "-nf", colors[0][ColFG],      "-sb",
     colors[1][ColBG], "-sf", colors[1][ColFG],      NULL};
 static const char *fuzzycmd[] = {"fuzzy_win", "fzf_cmd", NULL};
-static const char *alsamixer[] = {"record_win", "alsamixer", NULL};
+static const char *pulsemixer[] = {"record_win", "pulsemixer", NULL};
 static const char *termcmd[] = {"ghostty", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = {"urxvt",     "-name", scratchpadname,
@@ -81,7 +81,7 @@ static Key keys[] = {
     /* modifier                     key        function        argument */
     // { MODKEY,                       XK_r,      spawn,          {.v = dmenucmd
     // } },
-    {MODKEY, XK_v, spawn, {.v = alsamixer}},
+    {MODKEY, XK_v, spawn, {.v = pulsemixer}},
     {MODKEY, XK_space, spawn, {.v = fuzzycmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_s, togglescratch, {.v = scratchpadcmd}},
