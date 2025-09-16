@@ -7,7 +7,7 @@ static const char font[] = "-*-tamsyn-medium-*-*-*-20-*-*-*-*-*-*-*";
 static const char colors[NUMCOLORS][ColLast][8] = {
     /* border     fg          bg */
     {"#262626", "#757978", "#000000"}, /* 01 = normal */
-    {"#464646", "#C1C4BC", "#000000"}, /* 02 = selected */
+    {"#363636", "#C1C4BC", "#000000"}, /* 02 = selected */
     {"#A04363", "#A04363", "#282828"}, /* 03 = urgent/warning */
 };
 
@@ -73,6 +73,7 @@ static const char *dmenucmd[] = {
 static const char *fuzzycmd[] = {"fuzzy_win", "fzf_cmd", NULL};
 static const char *pulsemixer[] = {"record_win", "pulsemixer", NULL};
 static const char *termcmd[] = {"ghostty", NULL};
+static const char *browser[] = {"qutebrowser", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = {"urxvt",     "-name", scratchpadname,
                                       "-geometry", "80x25", NULL};
@@ -84,6 +85,7 @@ static Key keys[] = {
     {MODKEY, XK_v, spawn, {.v = pulsemixer}},
     {MODKEY, XK_space, spawn, {.v = fuzzycmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY | ShiftMask, XK_b, spawn, {.v = browser}},
     {MODKEY, XK_s, togglescratch, {.v = scratchpadcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
