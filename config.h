@@ -67,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = {
-    "dmenu_run",      "-fn", "tamzen:pixelsize=20", "-nb",
+    "dmenu_run",      "-fn", "Misc Tamsyn:pixelsize=20:stye=Regular", "-nb",
     colors[0][ColBG], "-nf", colors[0][ColFG],      "-sb",
     colors[1][ColBG], "-sf", colors[1][ColFG],      NULL};
 static const char *fuzzycmd[] = {"fuzzy_win", "fzf_cmd", NULL};
