@@ -72,7 +72,7 @@ static const char *dmenucmd[] = {
     colors[1][ColBG], "-sf", colors[1][ColFG],      NULL};
 static const char *fuzzycmd[] = {"fuzzy_win", "fzf_cmd", NULL};
 static const char *pulsemixer[] = {"record_win", "pulsemixer", NULL};
-static const char *inbox[] = {"record_win", "nvim /home/oem/sync/notes/inbox.md -c 7j -c startinsert", NULL};
+static const char *inbox[] = {"record_win", "nvim /home/oem/sync/notes/inbox.md -c 8j -c startinsert", NULL};
 static const char *termcmd[] = {"ghostty", NULL};
 static const char *browser[] = {"qutebrowser", NULL};
 static const char scratchpadname[] = "scratchpad";
